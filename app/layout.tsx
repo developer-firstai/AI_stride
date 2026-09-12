@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI STRIDE | AIビルダーの月間ウォーキングリーグ",
-  description: "AIエンジニア・AIスタートアップ経営者限定。毎日の歩数を記録して、月間ランキングに参加しよう。",
+  title: "AI STRIDE | AIビルダーのウォーキングコミュニティ",
+  description: "AIエンジニア・AIスタートアップ経営者限定。歩数を競い、歩いた記録を残し、地域やブランドとつながるコミュニティ。",
   other: {
     "codex-preview": "development",
   },
