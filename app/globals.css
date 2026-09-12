@@ -108,16 +108,16 @@ body{margin:0;background:#f6f8f9;color:#182b28;font-family:Arial,'Hiragino Kaku 
 /* FIRST AI visual reference — precise blue lines, white space, editorial sport */
 :root{--first-ai-blue:#0575e6;--first-ai-ink:#3f3f42;--first-ai-soft:#f4f8fc;--first-ai-line:#d7e5f4;--primary:var(--first-ai-blue);--primary-foreground:#fff;--ring:var(--first-ai-blue)}
 body{background:#fff;color:var(--first-ai-ink)}
-.site{min-height:100dvh;background:linear-gradient(90deg,#fff 0 35%,#f7fbff 35% 100%)}
-.site:before{content:"";position:fixed;inset:0 auto 0 0;width:min(34vw,360px);pointer-events:none;background:repeating-linear-gradient(90deg,transparent 0 28px,var(--first-ai-blue) 28px 39px,transparent 39px 70px);opacity:.98;z-index:-1}
-.topbar{height:94px;background:#fff;border-bottom:1px solid var(--first-ai-line);padding-left:calc(4.3% + min(9vw,110px));position:relative}
-.topbar:before{content:"";position:absolute;left:4.3%;top:0;width:86px;height:100%;background:repeating-linear-gradient(90deg,var(--first-ai-blue) 0 8px,transparent 8px 26px)}
+.site{min-height:100dvh;background:linear-gradient(90deg,#fff 0 35%,#f7fbff 35% 100%);position:relative;overflow-x:hidden}
+.site:before{content:"";position:fixed;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 0 18%,#0575e608 18.4% 18.8%,transparent 19.2% 100%),linear-gradient(115deg,transparent 0 54%,#0575e60a 54.2% 54.55%,transparent 54.9% 100%);background-size:220% 100%,260% 100%;animation:first-ai-scan 18s linear infinite;z-index:-1}
+.topbar{height:94px;background:#fff;border-bottom:1px solid var(--first-ai-line);padding-left:4.3%;position:relative}
+.topbar:before{content:"";position:absolute;left:4.3%;bottom:-1px;width:150px;height:2px;background:linear-gradient(90deg,transparent,var(--first-ai-blue),transparent);animation:first-ai-line 4.8s ease-in-out infinite}
 .brand{color:var(--first-ai-ink);font-size:24px;font-weight:800;letter-spacing:.22em;gap:16px}
 .brand-icon{width:44px;height:44px;background:#fff;color:var(--first-ai-blue);border-radius:0;border:2px solid var(--first-ai-blue);transform:none}
 .brand-sub{color:var(--first-ai-blue);font-weight:800;letter-spacing:.18em;max-width:92px;font-size:9px}
 .exclusive{color:#6b7280;font-weight:700;letter-spacing:.06em}
 .topbar .outline-link,.topbar [data-slot=button]{background:var(--first-ai-blue)!important;color:#fff!important;border-color:var(--first-ai-blue)!important;border-radius:0}
-.wrap{max-width:1420px;padding-left:calc(4.3% + min(9vw,110px))}
+.wrap{max-width:1420px;padding-left:4.3%}
 .page-heading{min-height:230px;margin-bottom:18px;position:relative}
 .page-heading:after{content:"FIRST AI";position:absolute;right:0;bottom:12px;color:#eef5fc;font-size:clamp(4rem,14vw,13rem);font-weight:900;letter-spacing:.06em;line-height:.72;z-index:-1}
 .page-heading h1{color:var(--first-ai-ink);font-size:clamp(2.6rem,5.7vw,6.8rem);line-height:.94;max-width:920px;font-weight:900;letter-spacing:.02em;text-transform:uppercase}
@@ -130,10 +130,10 @@ body{background:#fff;color:var(--first-ai-ink)}
 .phase-strip .phase-active svg{color:#fff}
 .phase-host b{color:var(--first-ai-blue);letter-spacing:.08em}
 .dashboard{grid-template-columns:minmax(0,1fr) 326px}
-.season-card{background:var(--first-ai-blue);border-radius:0;min-height:296px;color:#fff;isolation:isolate}
-.season-card:before{content:"";position:absolute;inset:0 auto 0 0;width:30%;background:repeating-linear-gradient(90deg,transparent 0 18px,#fff 18px 25px,transparent 25px 48px);opacity:.95;z-index:-1}
+.season-card{background:linear-gradient(135deg,var(--first-ai-blue),#176fe0);border-radius:0;min-height:296px;color:#fff;isolation:isolate}
+.season-card:before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 0 22%,#ffffff26 22.35% 22.9%,transparent 23.2% 100%);background-size:180% 100%;opacity:.7;z-index:-1;animation:first-ai-scan 10s linear infinite}
 .season-card:after{content:"STRIDE";right:auto;left:28px;bottom:-18px;color:#3f3f4260;font-size:70px;letter-spacing:.06em;transform:rotate(90deg);transform-origin:left bottom}
-.season-card>div:first-child{margin-left:min(22vw,250px);max-width:590px}
+.season-card>div:first-child{max-width:620px}
 .season-label,.season-stat{color:#fff}
 .season-card h2{font-size:clamp(2rem,3.2vw,3.5rem);line-height:1.2;font-weight:900;letter-spacing:.02em}
 .season-card p{font-size:13px;font-weight:800;letter-spacing:.16em}
@@ -156,9 +156,9 @@ body{background:#fff;color:var(--first-ai-ink)}
 .sponsor-card .eyebrow,.sponsor-card p,.sponsor-card .sponsor-wordmark span{color:#eaf4ff}
 .sponsor-card .sponsor-wordmark{color:#fff;letter-spacing:.08em;text-transform:uppercase}
 .sponsor-card [data-slot=button]{background:#fff;color:var(--first-ai-ink);border-radius:0}
-.loop-banner{background:var(--first-ai-blue);border-radius:0;position:relative;overflow:hidden}
-.loop-banner:before{content:"";position:absolute;inset:0 auto 0 0;width:112px;background:repeating-linear-gradient(90deg,transparent 0 14px,#fff 14px 20px,transparent 20px 36px);opacity:.96}
-.loop-banner>div{padding-left:126px}
+.loop-banner{background:linear-gradient(135deg,var(--first-ai-blue),#176fe0);border-radius:0;position:relative;overflow:hidden}
+.loop-banner:before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 0 30%,#ffffff24 30.35% 30.85%,transparent 31.2% 100%);background-size:190% 100%;opacity:.75;animation:first-ai-scan 12s linear infinite}
+.loop-banner>div{position:relative}
 .loop-banner .eyebrow{color:#fff}
 .loop-banner h3{letter-spacing:.08em;text-transform:uppercase}
 .loop-banner li{border-radius:0;background:#fff;color:var(--first-ai-ink);border:0}
@@ -168,11 +168,14 @@ body{background:#fff;color:var(--first-ai-ink)}
 .stride-post header>b,.community-empty svg,.session-empty svg,.session-kind,.stride-post footer button.cheered{color:var(--first-ai-blue)}
 .post-place,.community-empty,.session-empty{background:var(--first-ai-soft)}
 .drop-concept{background:#fff;color:var(--first-ai-ink);border:1px solid var(--first-ai-blue);border-radius:0}
-.drop-concept:before{content:"";position:absolute;inset:0 auto 0 0;width:58px;background:repeating-linear-gradient(90deg,var(--first-ai-blue) 0 7px,transparent 7px 18px)}
-.drop-concept>*{margin-left:66px}
+.drop-concept:before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 0 22%,#0575e612 22.4% 22.9%,transparent 23.3% 100%);background-size:180% 100%;animation:first-ai-scan 14s linear infinite}
+.drop-concept>*{position:relative}
 .drop-concept>svg{color:var(--first-ai-blue)}
 .drop-concept h4{color:var(--first-ai-blue);letter-spacing:.04em}
 .outline-link,.x-button,.Button,button[data-slot=button]{border-radius:0}
 button:focus-visible,a:focus-visible{outline-color:var(--first-ai-blue)}
 @media(max-width:1050px){.wrap,.topbar{padding-left:4.3%}.topbar:before,.site:before{display:none}.season-card>div:first-child{margin-left:0}.season-card:before{opacity:.14;width:100%}}
-@media(max-width:760px){.topbar{height:auto;min-height:78px;padding:16px 20px}.brand{font-size:19px;letter-spacing:.12em}.page-heading{min-height:0}.page-heading h1{font-size:43px}.wrap{padding:27px 20px}.season-card{min-height:260px;align-items:flex-end}.season-card h2{font-size:34px}.season-card:after{font-size:48px}.loop-banner>div{padding-left:0}.loop-banner:before{display:none}.dashboard{grid-template-columns:1fr}.community-stats{grid-template-columns:1fr}.community-stats>div{border-right:0;border-bottom:1px solid var(--first-ai-line);padding-bottom:10px}.drop-concept>*{margin-left:0}.drop-concept:before{width:100%;height:16px;bottom:auto}}
+@media(max-width:760px){.topbar{height:auto;min-height:78px;padding:16px 20px}.brand{font-size:19px;letter-spacing:.12em}.page-heading{min-height:0}.page-heading h1{font-size:43px}.wrap{padding:27px 20px}.season-card{min-height:260px;align-items:flex-end}.season-card h2{font-size:34px}.season-card:after{font-size:48px}.loop-banner:before{opacity:.38}.dashboard{grid-template-columns:1fr}.community-stats{grid-template-columns:1fr}.community-stats>div{border-right:0;border-bottom:1px solid var(--first-ai-line);padding-bottom:10px}.drop-concept:before{opacity:.45}}
+@keyframes first-ai-scan{0%{background-position:120% 0,140% 0}100%{background-position:-120% 0,-140% 0}}
+@keyframes first-ai-line{0%,100%{transform:translateX(0);opacity:.2}50%{transform:translateX(46vw);opacity:.75}}
+@media(prefers-reduced-motion:reduce){.site:before,.topbar:before,.season-card:before,.loop-banner:before,.drop-concept:before{animation:none}}
