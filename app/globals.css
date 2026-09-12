@@ -1,0 +1,99 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "../vendor/shadcn-tailwind-4.13.0.css";
+
+@utility scrollbar-thin {
+  scrollbar-width: thin;
+}
+
+@utility scrollbar-none {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility scrollbar-gutter-stable {
+  scrollbar-gutter: stable;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --card: #ffffff;
+  --card-foreground: #171717;
+  --popover: #ffffff;
+  --popover-foreground: #171717;
+  --primary: #18392f;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f5f5;
+  --secondary-foreground: #171717;
+  --muted: #f5f5f5;
+  --muted-foreground: #737373;
+  --accent: #f5f5f5;
+  --accent-foreground: #171717;
+  --destructive: #e7000b;
+  --border: #e5e5e5;
+  --input: #e5e5e5;
+  --ring: #4f7667;
+  --chart-1: #f54900;
+  --chart-2: #009689;
+  --chart-3: #104e64;
+  --chart-4: #ffb900;
+  --chart-5: #fe9a00;
+  --radius: 0.625rem;
+  --sidebar: #fafafa;
+  --sidebar-foreground: #171717;
+  --sidebar-primary: #171717;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #f5f5f5;
+  --sidebar-accent-foreground: #171717;
+  --sidebar-border: #e5e5e5;
+  --sidebar-ring: #a1a1a1;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: Arial, Helvetica, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+body{margin:0;background:#f6f8f9;color:#182b28;font-family:Arial,'Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;font-size:16px}button,a,input{touch-action:manipulation}button{cursor:pointer}.topbar{height:88px;background:#fff;border-bottom:1px solid #e5e9e8;display:flex;align-items:center;gap:24px;padding:0 4.3%}.brand{display:flex;align-items:center;gap:12px;color:#163d30;text-decoration:none;font-size:23px;font-weight:850;letter-spacing:-.8px}.brand-icon{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#d3f67b}.brand-sub{font-size:10px;letter-spacing:1.6px;max-width:60px;line-height:1.5;margin-left:3px}.exclusive{font-size:13px;color:#65736f;margin-left:auto}.wrap{max-width:1370px;margin:auto;padding:44px 4.3% 20px}.page-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:33px;gap:20px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:2px;color:#637e73;margin-bottom:10px}h1{font-size:30px;font-weight:750;letter-spacing:-.9px;line-height:1.5}.intro{font-size:14px;color:#65736f;margin-top:9px}.month-switch{display:flex;align-items:center;gap:24px;background:white;padding:14px 16px;border:1px solid #e2e8e5;border-radius:9px;white-space:nowrap}.dashboard{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:25px}.season-card{min-height:238px;background:#163c30;color:white;border-radius:15px;display:flex;justify-content:space-between;align-items:center;padding:28px 34px;position:relative;overflow:hidden}.season-label{font-size:11px;letter-spacing:2px;color:#d0ee9e}.season-card h2{font-size:29px;line-height:1.6;font-weight:600;letter-spacing:.5px;margin:15px 0}.season-card p{font-size:15px;letter-spacing:1px}.season-card p span{font-size:12px;letter-spacing:0;color:#abc0b7;margin-left:16px}.season-stat{display:flex;flex-direction:column;align-items:center;color:#d1f48a;padding-left:20px}.season-stat strong{font-size:85px;line-height:1.13;letter-spacing:-6px;font-weight:500}.season-stat span{font-size:10px;letter-spacing:2px}.stats{display:grid;grid-template-columns:1fr 1.5fr 1fr;background:white;border:1px solid #e3e9e6;border-radius:12px;margin:21px 0;padding:22px 5px}.stats>div{padding:0 22px;border-right:1px solid #e7ece9}.stats>div:last-child{border:0}.stats span{display:block;font-size:13px;color:#6e7c75;margin-bottom:9px}.stats strong{font-size:28px;line-height:1.2;letter-spacing:-.7px;font-variant-numeric:tabular-nums}.stats small{font-size:13px;font-weight:400;color:#7b8580}.ranking{background:#fff;border:1px solid #e3e9e6;border-radius:12px;overflow:hidden}.section-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.section-head h2{display:flex;align-items:center;gap:10px;font-size:16px;font-weight:650}.ranking>.section-head{padding:24px 24px 21px}.ranking>[data-slot=tabs]{padding:0 24px 18px}.muted{color:#748079;font-size:13px}.empty{padding:45px 20px;text-align:center;color:#6e8075}.empty>svg{margin:0 auto 15px;color:#779384}.empty h3{font-weight:650;color:#254c3d;margin:12px}.empty p{font-size:14px}.personal-card,.connection-card{border:1px solid #e3e9e6;border-radius:12px;padding:24px;background:white}.progress-ring{width:178px;height:178px;border-radius:50%;background:conic-gradient(#b1d66c 0deg,#eef2ec 0deg);padding:10px;margin:25px auto 20px}.progress-ring>div{background:white;border-radius:50%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}.progress-ring span,.progress-ring small{font-size:12px;color:#738073}.progress-ring strong{font-size:37px;letter-spacing:-1px;margin:2px;font-variant-numeric:tabular-nums}.center{text-align:center}.full{width:100%;margin-top:19px;min-height:42px}.connection-card{margin-top:22px;background:#ecf1e9;border-color:#e2e9dd}.connection-card>svg{color:#567348;margin-bottom:16px}.connection-card h3{font-weight:650;margin-bottom:12px}.connection-card p{font-size:14px;line-height:1.85;color:#586e5b}.connection-card small{font-size:12px;line-height:1.6;color:#64775f;display:block;margin-top:15px}footer{display:flex;justify-content:space-between;font-size:12px;color:#87918a;margin-top:35px;padding:21px 0;border-top:1px solid #e2e7e4}button:focus-visible,a:focus-visible{outline:3px solid #80a948;outline-offset:4px}@media(max-width:1050px){.exclusive{display:none}.topbar{justify-content:space-between}.dashboard{grid-template-columns:minmax(0,1fr) 280px}.season-card{padding:25px}.season-card h2{font-size:24px}.stats>div{padding:0 14px}.stats strong{font-size:24px}}@media(max-width:760px){.wrap{padding:27px 20px}.topbar{height:74px;padding:0 20px}.brand{font-size:20px}.brand-sub{display:none}.page-heading{align-items:flex-start;flex-direction:column;gap:22px}.page-heading h1{font-size:25px}.month-switch{width:100%;justify-content:space-between;padding:10px 15px}.dashboard{grid-template-columns:1fr}.season-card h2{font-size:24px}.season-card{padding:25px;min-height:215px}.season-stat strong{font-size:64px}.stats>div{padding:0 12px}.stats strong{font-size:22px}.stats span{font-size:12px}.ranking>[data-slot=tabs]{padding:0 12px 15px}.ranking [data-slot=tabs-trigger]{font-size:12px}footer{gap:20px;flex-direction:column}.personal-card{margin-top:0}h1{letter-spacing:0}}
+.month-switch{gap:15px}.month-switch input{background:transparent;border:0;font-size:15px;max-width:160px;font-weight:650;color:#19382e}.month-switch button:disabled{opacity:.25;cursor:default}.outline-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;border:1px solid #dce4df;border-radius:7px;font-size:14px;font-weight:600;white-space:nowrap;background:white}.ranking-toolbar{display:flex;justify-content:space-between;align-items:center;padding:0 24px 20px;gap:10px}.ranking-toolbar [data-slot=tabs]{max-width:100%}.rank-col{width:78px;text-align:center!important;padding-left:18px!important}.right{text-align:right!important}.ranking th{height:44px;background:#f8faf8;color:#859187;font-size:12px;font-weight:500}.ranking td{padding:17px 20px}.rank-medal{display:inline-grid;place-items:center;width:33px;height:33px;border-radius:50%;font-weight:650;font-size:14px;color:#7c8a81}.rank-1{background:#e6f0ca;color:#5e741e}.rank-2{background:#ecf0ee;color:#626e67}.rank-3{background:#f5ecdf;color:#9e7847}.member-cell{display:flex;gap:13px;align-items:center}.member-cell strong{font-size:14px;display:block}.member-cell small{display:block;font-size:12px;color:#829087;margin:3px 0}.avatar{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;background:#e5ece8;color:#437161;font-weight:600;flex-shrink:0}.avatar-founder{background:#efe7df;color:#8d725a}.role-tag{display:inline-block;font-size:11px;border:1px solid #e3e8e4;padding:2px 5px;border-radius:4px;color:#718176;line-height:1.4}.step-number{font-size:19px;font-weight:650;letter-spacing:-.4px;font-variant-numeric:tabular-nums}.source-label{display:block;font-size:11px;color:#87938b;margin-top:3px}.table-note{border-top:1px solid #eef0ed;padding:17px 24px;font-size:12px;color:#89948d}.personal-stats{border-top:1px solid #eef1ed;padding-top:17px;margin-bottom:18px;display:grid;gap:10px}.personal-stats span{display:flex;justify-content:space-between;font-size:12px;color:#859087}.personal-stats b{font-size:13px;font-weight:500;color:#486453}.csv-button{margin-top:5px;font-size:12px;color:#6d8173}.connection-card .section-head{margin-bottom:18px}.connection-status{font-size:11px;padding:3px 8px;border:1px solid #d2dcca;border-radius:30px;color:#6a7e60}.rules-link{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:12px;color:#75897a;margin-top:23px}.sample-banner{font-size:12px;color:#776421;background:#fbf7e7;padding:12px 24px}.error-box,.success-box{padding:13px 17px;border-radius:8px;margin-bottom:16px;font-size:14px;line-height:1.8}.error-box{background:#fff0ed;border:1px solid #f1d1c9;color:#9d4332}.success-box{background:#edf5e8;color:#486e35;display:flex;align-items:center;gap:8px}.text-link{display:inline-flex;gap:6px;align-items:center;color:#427156;text-decoration:underline;text-underline-offset:4px;font-size:13px}.pending-banner{display:flex;align-items:center;gap:16px;padding:20px;margin-bottom:23px;background:#eef3e8;border:1px solid #dfe8d5;border-radius:12px}.pending-banner strong{font-size:14px}.pending-banner p{font-size:13px;color:#657759;margin-top:4px}.pending-banner button{margin-left:auto;flex-shrink:0}.footer-links{display:flex;gap:20px}.footer-note{margin-left:14px}.app-dialog{max-height:90dvh;overflow-y:auto;background:white!important;color:#213e31;max-width:540px!important;border-radius:15px!important;padding:30px!important}.app-dialog p{font-size:14px;line-height:1.9}.app-dialog [data-slot=dialog-description]{font-size:14px;color:#708074;line-height:1.8;margin-top:7px}.form-stack{display:grid;gap:12px}.form-stack label{margin-top:4px;font-size:14px}.form-stack input:not([type=file]){height:42px;font-size:16px}.form-stack [data-slot=native-select-wrapper]{width:100%}.form-stack select{height:42px;width:100%}.check-row{display:flex;gap:10px;margin-top:8px}.check-row label{font-size:13px;line-height:1.8;cursor:pointer}.check-row button{flex-shrink:0;margin-top:8px}.csv-panel{border-top:1px solid #e2e9e2;margin-top:13px;padding-top:23px;display:grid;gap:13px}.csv-panel h3{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:650}.csv-panel p{font-size:13px;color:#6e7e6f}.flow{display:flex;align-items:center;justify-content:space-around;gap:8px;background:#eff4e9;padding:20px 10px;font-size:12px;border-radius:9px;font-weight:650}.dialog-info{background:#f1f5eb;padding:20px;border-radius:9px;line-height:1.8}.dialog-info h3{font-weight:650;margin-top:15px}.rules-content h3{font-size:15px;font-weight:700;margin:20px 0 8px}.rules-content p{color:#697b6d}.review{padding:20px 24px;border-top:1px solid #e7ece7;display:flex;justify-content:space-between;gap:18px}.review strong{font-size:15px}.review p{font-size:13px;color:#7b8a7e;margin:8px 0}.review-actions{display:flex;align-items:center;gap:8px}.status-tag{font-size:11px;padding:4px 7px;border-radius:5px;display:inline-block;margin-left:10px;background:#f4f0da;color:#7d733d}.status-tag.approved{background:#e7f1e1;color:#537344}.status-tag.rejected{background:#f3e8e2;color:#986647}.your-row{background:#f0f6e9!important}.you{margin-left:8px;font-size:10px;color:#809d5e}.pending-banner>svg{flex-shrink:0}@media(max-width:760px){.ranking-toolbar{padding:0 12px 15px}.ranking-toolbar>.muted{display:none}.ranking td{padding:15px 12px}.rank-col{width:47px;padding-left:7px!important}.days-col{display:none}.member-cell{gap:9px}.member-cell .avatar{width:31px;height:31px}.step-number{font-size:18px}.pending-banner{flex-wrap:wrap}.pending-banner>div{flex:1}.pending-banner button{margin-left:32px}.footer-note{display:block;margin:8px 0 0}.app-dialog{padding:24px!important}.review{flex-direction:column}.review-actions{justify-content:flex-end}.source-label,.role-tag{font-size:12px}.table-note{font-size:12px}.brand-sub{display:none}}
+@media(max-width:430px){.season-card{padding:23px 20px}.season-card h2{font-size:20px;line-height:1.8;letter-spacing:0}.season-stat{padding-left:10px}.season-stat strong{font-size:58px}.season-stat span{font-size:9px;letter-spacing:1px}}

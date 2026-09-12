@@ -1,0 +1,5 @@
+import {integer,text,sqliteTable,primaryKey,index} from 'drizzle-orm/sqlite-core';
+export const members=sqliteTable('members',{id:text('id').primaryKey(),name:text('name').notNull(),company:text('company').notNull(),role:text('role').notNull(),profile:text('profile').notNull(),status:text('status').notNull().default('pending'),createdAt:text('created_at').notNull()});
+export const steps=sqliteTable('steps',{userId:text('user_id').notNull().references(()=>members.id),date:text('date').notNull(),steps:integer('steps').notNull(),source:text('source').notNull(),updatedAt:text('updated_at').notNull()},t=>[primaryKey({columns:[t.userId,t.date]}),index('idx_steps_date_user').on(t.date,t.userId)]);
+export const admins=sqliteTable('admins',{slot:integer('slot').primaryKey(),userId:text('user_id').notNull()});
+export const connections=sqliteTable('connections',{userId:text('user_id').primaryKey().references(()=>members.id),token:text('token').notNull(),expiresAt:integer('expires_at').notNull(),lastSync:integer('last_sync').notNull().default(0)});
