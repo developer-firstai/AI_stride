@@ -1,6 +1,6 @@
-import { env } from 'cloudflare:workers';
+import { runtimeEnv } from '@/lib/runtime-env';
 import { getChatGPTUser } from '@/app/chatgpt-auth';
-export const settings = () => env as unknown as {
+export const settings = () => runtimeEnv as unknown as {
     DB: D1Database;
     ADMIN_SETUP_KEY?: string;
     TOKEN_ENCRYPTION_KEY?: string;

@@ -6,6 +6,17 @@ const [command, ...args] = process.argv.slice(2);
 if (!["dev", "build"].includes(command)) throw new Error("Expected dev or build.");
 const managedLinux = readExecutionProfile() === "managed-linux";
 
+// Sites uses Vinext/Cloudflare Workers, while Vercel runs the same App Router
+// source through its native Next.js runtime.
+if (process.env.VERCEL && command === "build") {
+  const cli = new URL("../node_modules/next/dist/bin/next", import.meta.url);
+  const result = spawnSync(process.execPath, [fileURLToPath(cli), "build", "--webpack", ...args], {
+    stdio: "inherit",
+  });
+  if (result.error) throw result.error;
+  process.exit(result.status ?? 1);
+}
+
 if (managedLinux && command === "build") {
   const result = spawnSync("bash", [
     fileURLToPath(new URL("./build-verified.sh", import.meta.url)), ...args,
