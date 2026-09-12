@@ -27,7 +27,7 @@ export async function GET(request: Request) {
             database.prepare("SELECT * FROM entries WHERE user_id=? AND month=? AND metric='walking'").bind(user.userId, todayJST().slice(0, 7)).first()
         ]);
         const pending = administrator ? (await database.prepare("SELECT m.*,x.username AS x_username FROM members m LEFT JOIN x_accounts x ON x.user_id=m.id ORDER BY m.created_at DESC").all()).results : [];
-        return Response.json({ user: { id: user.userId, name: user.displayName }, member, admin: administrator, rows: ranking, records: records.results, pending, connection, hpConfigured: !!(settings().HP_CLIENT_ID && settings().HP_CLIENT_SECRET && settings().TOKEN_ENCRYPTION_KEY), xConfigured, xAccount: x, entry, currentEntry }, { headers: { 'Cache-Control': 'no-store' } });
+        return Response.json({ user: { id: user.userId, name: user.displayName }, member, admin: administrator, rows: administrator || member?.status === 'approved' ? ranking : [], records: records.results, pending, connection, hpConfigured: !!(settings().HP_CLIENT_ID && settings().HP_CLIENT_SECRET && settings().TOKEN_ENCRYPTION_KEY), xConfigured, xAccount: x, entry, currentEntry }, { headers: { 'Cache-Control': 'no-store' } });
     }
     catch (e) {
         return fail(e);

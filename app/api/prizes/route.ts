@@ -40,7 +40,7 @@ export async function GET(request: Request) {
             throw new AppError('対象月を選択してください。');
         const rules = await db().prepare("SELECT * FROM prizes WHERE month=? AND metric='walking' AND (?=1 OR status!='draft') ORDER BY created_at").bind(month, administrator ? 1 : 0).all<Prize>();
         const result = await db().prepare("SELECT a.id,a.prize_id,a.name,a.rank,a.score,a.status,a.created_at,a.sent_at,a.received_at,p.title,p.provider,p.delivery,p.month,CASE WHEN a.user_id=? THEN 1 ELSE 0 END AS is_mine FROM awards a JOIN prizes p ON p.id=a.prize_id WHERE p.month=? ORDER BY a.rank,a.created_at").bind(u.userId, month).all();
-        return Response.json({ prizes: rules.results.map(p => ({ ...p, filters: JSON.parse(p.filters) })), awards: result.results, admin: administrator }, { headers: { 'Cache-Control': 'no-store' } });
+        return Response.json({ prizes: rules.results.map(p => ({ ...p, filters: JSON.parse(p.filters) })), awards: administrator || !!(await db().prepare("SELECT id FROM members WHERE id=? AND status='approved'").bind(u.userId).first()) ? result.results : result.results.filter(a => a.is_mine === 1), admin: administrator }, { headers: { 'Cache-Control': 'no-store' } });
     }
     catch (e) {
         return fail(e);
